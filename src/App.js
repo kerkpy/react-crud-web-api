@@ -3,22 +3,22 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AddTutorial from "./components/add-tutorial.component";
-import Tutorial from "./components/tutorial.component";
-import TutorialsList from "./components/tutorials-list.component";
+import AddContact from "./components/add-contact.component";
+import Contact from "./components/contact.component";
+import ContactsList from "./components/contacts-list.component";
 
 class App extends Component {
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/tutorials"} className="navbar-brand">
-            bezKoder
+          <Link to={"/contacts"} className="navbar-brand">
+            ContactBook
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={"/tutorials"} className="nav-link">
-                Tutorials
+              <Link to={"/contacts"} className="nav-link">
+                Contacts
               </Link>
             </li>
             <li className="nav-item">
@@ -31,9 +31,9 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
-            <Route exact path="/add" component={AddTutorial} />
-            <Route path="/tutorials/:id" component={Tutorial} />
+            <Route exact path={["/", "/contacts"]} component={ContactsList} />
+            <Route exact path="/add" component={AddContact} />
+            <Route path="/contacts/:name" component={Contact} />
           </Switch>
         </div>
       </div>
